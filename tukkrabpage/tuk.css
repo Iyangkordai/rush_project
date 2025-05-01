@@ -60,11 +60,11 @@ a {
     text-decoration: none;
     color: #000;
 }
-
 a:hover{
     color: rgb(0, 0, 0);
     font-weight: bolder;
 }
+
 
 body {
 
@@ -80,6 +80,7 @@ body {
 
 .contactbox i:hover {
     color: rgb(138, 72, 34);
+    
 }
 
 .contactbox i {
@@ -125,6 +126,7 @@ body {
     gap: 20px;
     border-radius: 10px;
     align-items: baseline;
+
 
 }
 .contact{
