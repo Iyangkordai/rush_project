@@ -71,7 +71,20 @@ html{
          max-height: 0;
          overflow: hidden;
     }
-    .
+    .navbar{
+         flex-direction: column​;
+         align-item: center;
+   }
+    .nav lable{
+         display: inline-flex;
+         align-item: center;
+         cursor: point​er;
+    }
+    #toggle:checked ~ .menubox{
+         max-height: 100%;
+   }
+}
+         
 i {
     font-size: 20px;
     text-align: center;
