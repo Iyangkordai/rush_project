@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            background: black;
+            overflow: hidden;
+
+        }
+
+        #stars-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            bottom: 0;
+            opacity: 1;
+            animation: floatUp 10s ease-in forwards;
+        }
+
+        @keyframes floatUp {
+            0% {
+                opacity: 1;
+                transform: translateY(0) rotate(0deg) scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-600px) rotate(720deg) scale(0.5);
+            }
+        }
+    </style>
+    <script>
+
+        function createStar() {
+            const wrapper = document.getElementById("stars-wrapper");
+            const star = document.createElement("img");
+            star.src = "https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTEwL3JtNDY3YmF0Y2gyLXN0YXItMDAxXzEucG5n.png";
+            star.classList.add("star");
+
+            const size = Math.random() * 40 + 50; // ขนาด 10px - 50px
+            star.style.width = size + "px";
+
+            const left = Math.random() * window.innerWidth * 2;
+            star.style.left = left + "px";
+            
+
+            const delay = Math.random() * 1 + 2;
+            star.style.animationDelay = delay + "s";
+
+            wrapper.appendChild(star);
+
+            // ลบออกหลัง animation เสร็จ
+            setTimeout(() => wrapper.removeChild(star), 200000);
+        }
+
+        // ปล่อยดาวใหม่ทุก 300ms
+        setInterval(createStar, 500);
+    </script>
+</head>
+
+<body>
+    <div id="stars-wrapper"></div>
+
+</body>
+
+</html>
