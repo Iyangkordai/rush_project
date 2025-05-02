@@ -10,9 +10,10 @@ html{
 .switch{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 10px;
+    width: 100%;
 }
 #switchicon:hover{
     color: rgb(138, 72, 34);
@@ -21,26 +22,24 @@ html{
 .nav {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
     background-color: antiquewhite;
     border-radius: 20px;
-    padding: 10px 20px;
+    padding: min(5em,2%) min(3em,2%);
     margin: 20px 40px; 
-    
     position: sticky;
     top: 0;
     z-index: 1000;
-
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
 }
 .navbar ul{
     list-style-type: none;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-    display: inherit;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     gap: 30px;
-    cursor: pointer;
 }
 .navbar {
     color: rgb(0, 0, 0);
@@ -78,11 +77,11 @@ a:hover{
 
 
 body {
-
     display: flex;
     flex-direction: column;
-    height: 100%;
-    padding: 10px 40px;
+    height: 100vh;
+    height: 100dvh;
+    padding: 10px 40px 10px 40px;
 }
 
 .menubox:hover {
@@ -99,8 +98,8 @@ body {
 }
 
 .section {
-    padding: 40px 50px;
-    height: fit-content;
+    padding: min(5em,4%) min(3em,4%);
+    height: 100%;
 }
 
 
@@ -111,7 +110,6 @@ body {
     justify-content: space-around;
     align-items: center;
     border-radius: 10px;
-
 }
 #profile h2{
     font-size: 25px;
@@ -122,12 +120,11 @@ body {
 #skill {
     background-color: aquamarine;
     border-radius: 10px;
-    height: 300px;
     font-size: 30px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    justify-content: center;
+    
 }
 
 #contact {
@@ -137,6 +134,7 @@ body {
     gap: 20px;
     border-radius: 10px;
     align-items: baseline;
+    height: 100%;
 
 
 }
@@ -144,7 +142,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-items: center;
-    align-items: center;
+    align-content: center;
     gap: 10px;
 
 }
@@ -157,6 +155,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    height: 100%;
 }
 
 #mypic {
@@ -165,3 +164,76 @@ body {
     border-radius: 600px;
     justify-self: flex-end;
 }
+#menu_icon{
+    color: black;
+    font-size: 20px;
+    display: none;
+    cursor: pointer;
+}
+
+@media(max-width : 1028px){
+    #profile h2{
+        font-size: 18px;
+    }
+    #profile h1{
+        font-size:24px;
+    }
+}
+
+@media(max-width : 992px){
+    .nav{
+        padding: 1.25rem 4%;
+        
+    }
+    p {
+        font-size: 20px;
+    }
+    #skill{
+        align-items: center;
+
+    }
+
+}
+
+@media(max-width: 895px) {
+    #menu_icon{
+        display: block;
+    }
+    .nav{
+        flex-direction: column;
+        align-items: flex-start;
+        padding: .5rem 4%;  
+        margin: 0;  
+        margin-bottom: 20px; 
+        height: fit-content;   
+        justify-content: center;
+
+    }
+    .navbar{
+        display: none;
+    }
+    .navbar ul{
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: .5rem 4%;
+    }
+    .navbar.active {
+        display: block;
+    }
+    .contactbox{
+        display: none;
+    }
+    #profile h2{
+        font-size: 18px;
+    }
+    #profile h1{
+        font-size:20px;
+    }
+    #mypic {
+        width: 200px;
+        
+    }
+}
+
+
